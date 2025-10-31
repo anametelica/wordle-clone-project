@@ -1,0 +1,93 @@
+
+h1 {
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#guess-grid {
+    width: 400px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    row-gap:10px;
+    margin-bottom: 30px;
+    margin-left: 300px;
+}
+
+.guess-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-self: center;
+    column-gap: 10px;
+}
+
+body {
+    background-color: rgb(27, 27, 27);
+}
+
+.tile {
+    color: aliceblue;
+    width: 50px;
+    height: 50px;
+    text-transform: capitalize;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(61, 61, 61);
+}
+
+#keyboard {
+    width: 500px;
+    height: 150px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin-left: 250px;
+}
+
+button {
+    background-color: #818384;
+    color: #f8f8f8;
+    border: none;
+    margin: 3px 2px;
+    height: 47px;
+    width: 33px;
+    border-radius: 4px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.guessed-letter {
+    background-color: rgb(90, 173, 35);
+    color: white;
+    border-color: rgb(90, 173, 35);
+}
+
+.wrong-position {
+    background-color: rgb(212, 158, 10);
+    color: white;
+    border-color: rgb(212, 158, 10);
+}
+
+.wrong-letter {
+    background-color: rgb(61, 61, 61);
+    color: white;
+}
+
+#backspace {
+    width: 7rem;
+}
+
+#enter {
+    width: 5rem
+}
