@@ -2313,8 +2313,25 @@ console.log(listAllWords)
 
 //----------------------------------------------------------------------------------------------------------------------------------------------//
 
+//get date and pick word based on that => turn it into number =>and get word from array based on that number so it's the same for everyone on a given day
+//date detection
+//pick word based on number instead of randomizer
+var dateHolder = new Date();
+console.log(dateHolder);
+var dateDayNum = String(dateHolder.getDate());
+var dateMonthNum = String(dateHolder.getMonth());
+var dateYearNum = String(dateHolder.getFullYear());
+console.log(dateDayNum, dateMonthNum, dateYearNum);
+var concDate = dateDayNum + dateMonthNum + dateYearNum
+var listElementNum = concDate % listAllWords.length;
+console.log(listElementNum);
 
-var todaysWord = listAllWords[Math.floor(Math.random() * listAllWords.length + 1)];
+var todaysWord = listAllWords[listElementNum];
+//date = number
+//date number % list lenght = 0 to max list element
+//todaysWord = listAllWords[that last number]
+
+// var todaysWord = listAllWords[Math.floor(Math.random() * listAllWords.length + 1)];
 console.log(todaysWord);
 
 const allRows = ["first-row", "second-row", "third-row", "fourth-row", "fifth-row", "sixth-row"];
