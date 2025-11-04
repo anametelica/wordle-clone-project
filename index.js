@@ -2428,21 +2428,40 @@ function theOne(triggeredEvent) {
                 });
 
             if (userInputAsString === todaysWord) {
-                alert("You've guessed it!");
+                $(".popup").html("You've guessed it!");
+                $(".popup").addClass("show");
+                    setTimeout(() => {
+                        $(".popup").removeClass("show");
+                        }, 1500);
                 return;
             } else {
                 if (activeRow === 5) {
-                alert("Oops! Today's word was \"" + todaysWord + "\"!");
+                    $(".popup").html("Oops! Today's word was \"" + todaysWord + "\"!");
+                    $(".popup").addClass("show");
+                    setTimeout(() => {
+                        $(".popup").removeClass("show");
+                        }, 1500);
                 return;
                 };
             };
 
             resetRound();
 
-            } else {alert("word not in list!")};
-        } else {alert("not enough letters!") };
+            } else {
+                $(".popup").html("Word not in list!");
+                $(".popup").addClass("show");
+                setTimeout(() => {
+                    $(".popup").removeClass("show");
+                    }, 1500);
+            };} else {
+                    $(".popup").html("Not enough letters!");
+                    $(".popup").addClass("show");
+                        setTimeout(() => {
+                            $(".popup").removeClass("show");
+                            }, 1500);
+        };
 
-    } else {// normal key 
+    } else { // normal key 
         if(activeTile < 5) {
             currentActiveTile = $('.guess-row').eq(activeRow).children().eq(activeTile); //currentAtiveTile's position is updated based on the new activeTile number
             if (this.type == "button"){
