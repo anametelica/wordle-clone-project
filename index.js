@@ -2352,9 +2352,7 @@ function resetRound(){
 };
 
 function changeCurrentTileColor(className, index, letter) {
-    console.log(`user filled row : ${userFilledRow}`)
     $(userFilledRow[index]).addClass(className);
-    console.log(letter in obj_countOfLettersInPickedWord);
     if (letter in obj_countOfLettersInPickedWord){
         obj_countOfLettersInPickedWord[letter]--;
     };
@@ -2398,7 +2396,7 @@ function theOne(triggeredEvent) {
     if (this.id  === "backspace" || triggeredEvent.key === "Backspace") {
         backspace_pressed();
     } else if (this.id === "enter" || triggeredEvent.key === "Enter") {
-
+        console.log("the active tile is:" + activeTile)
         if (activeTile === 5) {
         var userInputAsString = userLetters.join("");
 
@@ -2475,9 +2473,11 @@ function theOne(triggeredEvent) {
         };
         console.log(userLetters);
         console.log(todaysWord);
+        console.log("the after button press active tile is" + activeTile);
     };
+    const $key = $(this);
+    $key.blur(); 
 };
-
 
 $('button').on('click', theOne);
 $(document).on('keydown', theOne);
